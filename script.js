@@ -255,3 +255,22 @@ listaMenu.querySelectorAll("a").forEach(link => {
         przyciskMenu.setAttribute("aria-label", "Otwórz menu");
     });
 });
+
+
+//przycisk powrotu na górę
+const przyciskPowrotu = document.querySelector("#powrot-na-gore");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        przyciskPowrotu.style.display = "block";
+    } else {
+        przyciskPowrotu.style.display = "none";
+    }
+});
+
+przyciskPowrotu.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
