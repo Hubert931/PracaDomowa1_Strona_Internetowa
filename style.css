@@ -17,10 +17,18 @@ body {
 
 
 header {
-    padding: 40px 20px;
+    padding: 55px 20px;
     text-align: center;
-    background-color: #a62632;
-    color: #ffffff;
+    background: linear-gradient(
+        to bottom,
+        #AA202B 0%,
+        #AA202B 20%,
+        #F5C928 20%,
+        #F5C928 80%,
+        #AA202B 80%,
+        #AA202B 100%
+    );
+    color: #292521;
 }
 
 header h1 {
@@ -34,25 +42,57 @@ header p {
 
 
 main {
-    width: min(100% - 40px, 1100px);
+    width: min(100% - 40px, 1200px);
     margin: 0 auto;
 }
 
 section {
-    padding: 40px 0;
+    padding: 55px 0;
     border-bottom: 1px solid #ded5c9;
 }
 
+
+/* Nagłówki głównych sekcji */
 section h2 {
-    color: #a62632;
+    color: #A62632;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+/* Dekoracyjna linia pod nagłówkiem */
+section h2::after {
+    content: "";
+    display: block;
+    width: 380px;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        #A62632,
+        rgba(166, 38, 50, 0)
+    );
+    margin-top: 14px;
 }
 
 
+
+/* Stopka strony */
 footer {
-    padding: 20px;
+    padding: 30px 20px;
     text-align: center;
     background-color: #292521;
     color: #ffffff;
+    border-top: 4px solid #A62632;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
 }
 
 
@@ -74,18 +114,145 @@ footer {
 
 .main-nav a {
     display: block;
-    padding: 16px 18px;
+    padding: 16px 20px;
     color: #ffffff;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
 }
 
 .main-nav a:hover,
 .main-nav a:focus-visible {
-    background-color: #a62632;
+    background-color: #A62632;
+    color: #ffffff;
 }
 
-.main-nav a:focus-visible {
-    outline: 2px solid #ffffff;
-    outline-offset: -4px;
+
+
+/* Układ kart miast, atrakcji i potraw */
+.lista-miast,
+.lista-atrakcji,
+.lista-potraw {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Wygląd pojedynczej karty */
+.karta-miasta,
+.karta-atrakcji,
+.karta-potrawy {
+    background-color: #FFF1D0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(41, 37, 33, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Zdjęcia wewnątrz kart */
+.karta-miasta img,
+.karta-atrakcji img,
+.karta-potrawy img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Nagłówki kart */
+.karta-miasta h3,
+.karta-atrakcji h3,
+.karta-potrawy h3 {
+    margin: 18px 18px 10px;
+    color: #A62632;
+    font-size: 1.3rem;
+}
+
+/* Tekst w kartach */
+.karta-miasta p,
+.karta-atrakcji p,
+.karta-potrawy p {
+    margin: 0 18px 18px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #494038;
+    flex-grow: 1;
+}
+
+/* Efekt po najechaniu kursorem */
+.karta-miasta:hover,
+.karta-atrakcji:hover,
+.karta-potrawy:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(41, 37, 33, 0.2);
+}
+
+
+/* Karty ciekawostek */
+#ciekawostki {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#ciekawostki h2,
+#ciekawostki > p {
+    grid-column: 1 / -1;
+}
+
+.ciekawostka {
+    background-color: #FFF1D0;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(41, 37, 33, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ciekawostka h3 {
+    color: #A62632;
+    margin-top: 0;
+}
+
+.ciekawostka p {
+    margin-bottom: 0;
+}
+
+.ciekawostka:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(41, 37, 33, 0.18);
+}
+
+
+/* Wstępy pod nagłówkami sekcji */
+.wstep-sekcji {
+    max-width: 950px;
+    margin: 0 0 30px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #494038;
+}
+
+.karta-miasta:hover img,
+.karta-atrakcji:hover img,
+.karta-potrawy:hover img {
+    transform: scale(1.05);
+}
+
+/* Wyróżniony tekst wprowadzający */
+#o-hiszpanii > p:first-of-type {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #494038;
+    line-height: 1.9;
+}
+html {
+    scroll-behavior: smooth;
 }
