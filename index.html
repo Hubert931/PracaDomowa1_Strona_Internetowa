@@ -152,6 +152,14 @@
                     </p>
                 </article>
             </div>
+            <div id="quiz">
+                <h3>Która część Hiszpanii jest dla Ciebie?</h3>
+                <p> Odpowiedz na kilka pytań i odkryj miasto,
+                    które najlepiej pasuje do Twoich zainteresowań!
+                </p>
+            <div id="quiz-zawartosc"></div>
+        </div>
+
         </section>
 
         <section id="atrakcje">
@@ -261,13 +269,19 @@
             <p class="wstep-sekcji">
                 Hiszpańska kuchnia słynie z aromatycznych przypraw,
                 świeżych składników i potraw, które warto poznać.
-                Kliknij wybraną potrawę, aby poznać przepis.
             </p>
+            <p class="wstep-sekcji">
+                Kliknij zdjęcie wybranej potrawy,
+                aby zobaczyć jej składniki i sposób przygotowania.
+            </p>
+
             <div class="lista-potraw">
                 <article class="karta-potrawy">
                     <img
                         src="images/paella.jpg"
-                        alt="Tradycyjna hiszpańska paella z ryżem i dodatkami"
+                        alt="Paella"
+                        class="zdjecie-potrawy"
+                        data-przepis="paella"
                         width="800"
                         height="600"
                     >
@@ -282,7 +296,9 @@
                 <article class="karta-potrawy">
                     <img
                         src="images/tortilla.jpg"
-                        alt="Hiszpańska tortilla z ziemniakami i jajkami"
+                        alt="Tortilla espanola"
+                        class="zdjecie-potrawy"
+                        data-przepis="tortilla"
                         width="800"
                         height="600"
                     >
@@ -296,7 +312,9 @@
                 <article class="karta-potrawy">
                     <img
                         src="images/churros.jpg"
-                        alt="Churros podawane z gęstą czekoladą"
+                        alt="Churros"
+                        class="zdjecie-potrawy"
+                        data-przepis="churros"
                         width="800"
                         height="600"
                     >
@@ -310,7 +328,9 @@
                 <article class="karta-potrawy">
                     <img
                         src="images/patatas.jpg"
-                        alt="Ziemniaki patatas bravas z pikantnym sosem"
+                        alt="patatas"
+                        class="zdjecie-potrawy"
+                        data-przepis="patatas"
                         width="800"
                         height="600"
                     >
@@ -325,7 +345,9 @@
                 <article class="karta-potrawy">
                     <img
                         src="images/gazpacho.jpg"
-                        alt="Hiszpański chłodnik gazpacho z pomidorów i świeżych warzyw"
+                        alt="gazpacho"
+                        class="zdjecie-potrawy"
+                        data-przepis="gazpacho"
                         width="800"
                         height="600"
                     >
@@ -340,7 +362,9 @@
                 <article class="karta-potrawy">
                     <img
                         src="images/pulpo.jpg"
-                        alt="Pulpo a la gallega, ośmiornica z ziemniakami, papryką i oliwą"
+                        alt="Pulpo"
+                        class="zdjecie-potrawy"
+                        data-przepis="pulpo"
                         width="800"
                         height="600"
                     >
@@ -416,11 +440,19 @@
                 </p>
             </article>
         </section>
+
+        <div id="okno-przepisu" class="okno-przepisu" hidden>
+            <div class="zawartosc-przepisu">
+                <button id="zamknij-przepis" type="button" aria-label="Zamknij przepis">&times;</button>
+                <h2 id="tytul-przepisu"></h2>
+                <div id="tresc-przepisu"></div>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Odkryj Hiszpanię</p>
     </footer>
-
+<script src="script.js"></script>
 </body>
 </html>

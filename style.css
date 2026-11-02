@@ -256,3 +256,92 @@ footer p {
 html {
     scroll-behavior: smooth;
 }
+
+
+/* Okno z przepisem */
+.okno-przepisu {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.okno-przepisu[hidden] {
+    display: none;
+}
+
+.zawartosc-przepisu {
+    position: relative;
+    width: min(100%, 600px);
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 35px;
+    background: #FFF1D0;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.zawartosc-przepisu h2 {
+    color: #A62632;
+    margin-top: 0;
+}
+
+#zamknij-przepis {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    background: none;
+    color: #292521;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Quiz - dopasowanie miasta */
+#quiz {
+    margin-top: 45px;
+    padding: 30px;
+    background: #FFF1D0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(41, 37, 33, 0.12);
+}
+
+#quiz h3 {
+    color: #A62632;
+    margin-top: 0;
+}
+
+.odpowiedzi-quizu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.odpowiedz-quizu,
+#powtorz-quiz {
+    padding: 15px 20px;
+    border: 2px solid #A62632;
+    border-radius: 8px;
+    background: #fff;
+    color: #292521;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.odpowiedz-quizu:hover,
+#powtorz-quiz:hover {
+    background: #A62632;
+    color: #fff;
+}
+
+#quiz-zawartosc > p {
+    color: #494038;
+    font-size: 0.9rem;
+}
