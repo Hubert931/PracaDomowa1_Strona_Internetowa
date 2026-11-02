@@ -234,3 +234,24 @@ function pokazWynikQuizu() {
 }
 
 pokazPytanie();
+
+const przyciskMenu = document.querySelector("#menu-hamburger");
+const listaMenu = document.querySelector("#menu-lista");
+
+przyciskMenu.addEventListener("click", () => {
+    const menuJestOtwarte = listaMenu.classList.toggle("menu-otwarte");
+
+    przyciskMenu.setAttribute("aria-expanded", menuJestOtwarte);
+    przyciskMenu.setAttribute(
+        "aria-label",
+        menuJestOtwarte ? "Zamknij menu" : "Otwórz menu"
+    );
+});
+
+listaMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        listaMenu.classList.remove("menu-otwarte");
+        przyciskMenu.setAttribute("aria-expanded", "false");
+        przyciskMenu.setAttribute("aria-label", "Otwórz menu");
+    });
+});

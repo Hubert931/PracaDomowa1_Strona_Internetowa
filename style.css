@@ -51,8 +51,6 @@ section {
     border-bottom: 1px solid #ded5c9;
 }
 
-
-/* Nagłówki głównych sekcji */
 section h2 {
     color: #A62632;
     font-size: 2rem;
@@ -64,7 +62,6 @@ section h2 {
     padding-bottom: 12px;
 }
 
-/* Dekoracyjna linia pod nagłówkiem */
 section h2::after {
     content: "";
     display: block;
@@ -78,9 +75,6 @@ section h2::after {
     margin-top: 14px;
 }
 
-
-
-/* Stopka strony */
 footer {
     padding: 30px 20px;
     text-align: center;
@@ -94,8 +88,6 @@ footer p {
     font-size: 0.95rem;
     letter-spacing: 0.5px;
 }
-
-
 
 .main-nav {
     background-color: #292521;
@@ -130,9 +122,6 @@ footer p {
     color: #ffffff;
 }
 
-
-
-/* Układ kart miast, atrakcji i potraw */
 .lista-miast,
 .lista-atrakcji,
 .lista-potraw {
@@ -142,7 +131,6 @@ footer p {
     margin-top: 30px;
 }
 
-/* Wygląd pojedynczej karty */
 .karta-miasta,
 .karta-atrakcji,
 .karta-potrawy {
@@ -156,7 +144,6 @@ footer p {
     height: 100%;
 }
 
-/* Zdjęcia wewnątrz kart */
 .karta-miasta img,
 .karta-atrakcji img,
 .karta-potrawy img {
@@ -167,7 +154,6 @@ footer p {
     transition: transform 0.4s ease;
 }
 
-/* Nagłówki kart */
 .karta-miasta h3,
 .karta-atrakcji h3,
 .karta-potrawy h3 {
@@ -176,7 +162,6 @@ footer p {
     font-size: 1.3rem;
 }
 
-/* Tekst w kartach */
 .karta-miasta p,
 .karta-atrakcji p,
 .karta-potrawy p {
@@ -187,7 +172,6 @@ footer p {
     flex-grow: 1;
 }
 
-/* Efekt po najechaniu kursorem */
 .karta-miasta:hover,
 .karta-atrakcji:hover,
 .karta-potrawy:hover {
@@ -195,8 +179,6 @@ footer p {
     box-shadow: 0 10px 22px rgba(41, 37, 33, 0.2);
 }
 
-
-/* Karty ciekawostek */
 #ciekawostki {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -230,8 +212,6 @@ footer p {
     box-shadow: 0 10px 20px rgba(41, 37, 33, 0.18);
 }
 
-
-/* Wstępy pod nagłówkami sekcji */
 .wstep-sekcji {
     max-width: 950px;
     margin: 0 0 30px;
@@ -246,7 +226,6 @@ footer p {
     transform: scale(1.05);
 }
 
-/* Wyróżniony tekst wprowadzający */
 #o-hiszpanii > p:first-of-type {
     font-size: 1.2rem;
     font-weight: 500;
@@ -257,8 +236,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-/* Okno z przepisem */
 .okno-przepisu {
     position: fixed;
     inset: 0;
@@ -301,7 +278,6 @@ html {
     cursor: pointer;
 }
 
-/* Quiz - dopasowanie miasta */
 #quiz {
     margin-top: 45px;
     padding: 30px;
@@ -344,4 +320,137 @@ html {
 #quiz-zawartosc > p {
     color: #494038;
     font-size: 0.9rem;
+}
+
+.menu-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 45px;
+    height: 40px;
+    padding: 7px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+}
+
+
+@media (max-width: 768px) {
+    
+    .main-nav {
+        padding: 10px 20px;
+    }
+
+    .menu-hamburger {
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .main-nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        padding-top: 10px;
+    }
+
+    .main-nav ul.menu-otwarte {
+        display: flex;
+    }
+
+    .main-nav a {
+        text-align: center;
+    }
+
+    .lista-miast,
+    .lista-atrakcji,
+    .lista-potraw {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .karta-miasta img,
+    .karta-atrakcji img,
+    .karta-potrawy img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .lista-miast,
+    .lista-atrakcji,
+    .lista-potraw {
+        grid-template-columns: 1fr;
+    }
+
+    .karta-miasta img,
+    .karta-atrakcji img,
+    .karta-potrawy img {
+        height: 220px;
+    }
+
+    header {
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.95rem;
+    }
+
+    main {
+        width: calc(100% - 30px);
+    }
+
+    section {
+        padding: 35px 0;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+
+    section h2::after {
+        width: 220px;
+    }
+
+    #quiz {
+        padding: 20px;
+    }
+
+    .odpowiedzi-quizu {
+        grid-template-columns: 1fr;
+    }
+
+    #ciekawostki {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .ciekawostka {
+        padding: 18px;
+    }
+
+    .wstep-sekcji {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .zawartosc-przepisu {
+        padding: 25px 20px;
+        max-height: 85vh;
+    }
 }
